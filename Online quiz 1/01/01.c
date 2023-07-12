@@ -1,47 +1,48 @@
 #include<stdio.h>
 
 int main (void)
+
 {
 	
-	int type;
-	int unit;
-	float charge;
-	float add_charge = 0;
+	int years;
+	int units;
+	float tot = 0;
+
 	
-	printf("Customer Type : ");		
-	scanf(" %d" , &type);
 	
-	printf("Number of Units : ");
-	scanf(" %d" , &unit );
+	printf("no of years worked :");  
+	scanf("%d" , &years);
 	
-	if(type == 1)  
+		
+	printf("No of units : "); 
+	scanf("%d" , &units);
+	
+	if(years > 2 )
 	{
-		if(unit <= 100)
+		if( units <= 30 )
 		{
-			charge = 10 * unit;
+			tot = units * 1000.00;
 		}
-		else
+		else if( units > 30 && units <= 100)	
 		{
-			charge = 100 * 10 + ((unit - 100 ) * 30 );
-			add_charge = charge * 20 / 100 ;  
-			
+			tot = units * 2500.00;
+		}
+		else if( units > 100 )
+		{
+			tot = units * 3500.00	;
 		}
 	}
-	else if(type == 2)		
+	else 
 	{
-		if(unit <= 100)
-		{
-			charge = 10 * unit;
-		}
-		else
-		{
-			charge = 100 * 10 + ((unit - 100 ) * 30 );
-		}
+		tot = tot;
 	}
 	
-	charge = charge + add_charge ;
-	printf("Monthly charge : %.2f ", charge); 
+	printf("Commission : %.2f" , tot);
 	
 	return 0;
-
+	
 }
+
+
+
+
